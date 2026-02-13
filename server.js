@@ -9,7 +9,9 @@ require("dotenv").config();
 
 const JWT_SECRET = "secretkey123";
 
-app.use(cors());
+app.use(cors({
+  origin: "*", 
+}));
 app.use(express.json());
 // Middleware to protect routes
 const authMiddleware = (req, res, next) => {
